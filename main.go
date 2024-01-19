@@ -145,7 +145,7 @@ func think(ch2 <-chan int) {
 			if chan1.IsOpen {
 				chan1.Ch <- selected
 			}
-			//ch1 <- selected
+
 			println(helper.JoinStrings("philosopher:", strconv.Itoa(val), "Has Finished Eating. Now:", strconv.Itoa(selected), " Can eat"))
 		} else {
 			println(helper.JoinStrings("philosopher:", strconv.Itoa(val), "Has Finished Eating. But No neighbor can start"))
