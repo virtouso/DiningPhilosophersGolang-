@@ -67,7 +67,7 @@ func main() {
 
 	// logging to show result of the simulation
 	for _, val := range philosophers {
-		println("philosopher:" + strconv.Itoa(val.Id) + "->Eat Count:" + strconv.Itoa(val.EatCount))
+		println(helper.JoinStrings("philosopher:", strconv.Itoa(val.Id), "->Eat Count:", strconv.Itoa(val.EatCount)))
 	}
 	println("as you can see no one has starved!...")
 
@@ -114,9 +114,9 @@ func think(ch2 <-chan int, ch1 chan<- int) {
 
 		if selected >= 0 {
 			ch1 <- selected
-			println("philosopher:" + strconv.Itoa(val) + "Has Finished Eating. Now:" + strconv.Itoa(selected) + "Can eat")
+			println(helper.JoinStrings("philosopher:", strconv.Itoa(val), "Has Finished Eating. Now:", strconv.Itoa(selected), " Can eat"))
 		} else {
-			println("philosopher:" + strconv.Itoa(val) + "Has Finished Eating. But No neighbor can start")
+			println(helper.JoinStrings("philosopher:", strconv.Itoa(val), "Has Finished Eating. But No neighbor can start"))
 		}
 
 	}
