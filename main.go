@@ -15,8 +15,8 @@ var chopsticks []models.Chopstick
 
 func main() {
 
-	for philosophersCount <= 1 {
-		fmt.Println("write number of dining philosophers (any integer value):")
+	for philosophersCount <= 2 || philosophersCount >= 10 {
+		fmt.Println("write number of dining philosophers (any integer value 3-9. small number for testability. big numbers also tested):")
 		fmt.Scanln(&userInput)
 		philosophersCount, inputError = strconv.Atoi(userInput)
 		if inputError != nil {
